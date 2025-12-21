@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PackageId>ReValidator.Contracts</PackageId>
+    <Title>ReValidator.Contracts</Title>
+    <Version>1.0.0</Version>
+    <Authors>Ganușceac Vlad</Authors>
+    <Product>ReValidator</Product>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Description>**ReValidator** provides **runtime-reconfigurable validation** for .NET applications.
+
+      Unlike traditional validation frameworks that rely on static rule definitions or reflection-heavy execution, ReValidator uses **compiled expression trees**, achieving performance close to **statically defined validation rules** while preserving **full runtime flexibility**.
+    </Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.6.8" />
+  </ItemGroup>
+
+</Project>

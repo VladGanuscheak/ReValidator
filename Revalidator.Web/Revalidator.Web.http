@@ -1,0 +1,6 @@
+@Revalidator.Web_HostAddress = http://localhost:5132
+
+GET {{Revalidator.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
