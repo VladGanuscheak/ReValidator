@@ -14,6 +14,7 @@
     <Description>**ReValidator** provides **runtime-reconfigurable validation** for .NET applications.
 
 Unlike traditional validation frameworks that rely on static rule definitions or reflection-heavy execution, ReValidator uses **compiled expression trees**, achieving performance close to **statically defined validation rules** while preserving **full runtime flexibility**.</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
