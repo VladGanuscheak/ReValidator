@@ -5,9 +5,9 @@ namespace Revalidator.Web.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController(ILogger<WeatherForecastController> logger) : ControllerBase
+public class ValidationController(ILogger<ValidationController> logger) : ControllerBase
 {
-    private readonly ILogger<WeatherForecastController> _logger = logger;
+    private readonly ILogger<ValidationController> _logger = logger;
 
     [HttpPost(Name = nameof(First_Test))]
     public IActionResult First_Test(
@@ -16,10 +16,11 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
     {
         var validationResult = validator.Validate(person);
         
-        if (validationResult.IsValid)
+        if (!validationResult.IsValid)
         {
-            _logger.LogInformation($"The following validation did not pass: " +
-                $"{validationResult.Errors.Select(x => $"{x.PropertyName}: {string.Join(", ", x.ErrorMessages)};")}");
+            _logger.LogInformation($"The following validation did not pass: {validationResult.Errors.Select(x => $"{x.PropertyName}: {string.Join(", ", x.ErrorMessages)};")}");
+
+            return UnprocessableEntity(validationResult);
         }
 
         var isValid = validationResult.IsValid;
@@ -38,7 +39,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
 
     public class Person
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public int Age { get; set; }
     }
 }

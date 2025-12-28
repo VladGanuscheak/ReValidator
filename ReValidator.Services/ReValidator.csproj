@@ -5,16 +5,20 @@
     <Nullable>enable</Nullable>
     <PackageId>ReValidator</PackageId>
     <Title>ReValidator</Title>
+    <Version>1.0.1</Version>
     <Authors>Ganușceac Vlad</Authors>
     <Product>ReValidator</Product>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Description>**ReValidator** provides **runtime-reconfigurable validation** for .NET applications.
+    <Description>ReValidator provides runtime-reconfigurable validation for .NET applications.
 
-Unlike traditional validation frameworks that rely on static rule definitions or reflection-heavy execution, ReValidator uses **compiled expression trees**, achieving performance close to **statically defined validation rules** while preserving **full runtime flexibility**.</Description>
+Unlike traditional validation frameworks that rely on static rule definitions or reflection-heavy execution, ReValidator uses compiled expression trees, achieving performance close to statically defined validation rules while preserving full runtime flexibility.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/VladGanuscheak/ReValidator.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>validation;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
