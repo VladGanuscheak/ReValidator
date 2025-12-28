@@ -1,7 +1,7 @@
 
 using ReValidator;
 using ReValidator.SetUp;
-using static Revalidator.Web.Controllers.WeatherForecastController;
+using static Revalidator.Web.Controllers.ValidationController;
 
 namespace Revalidator.Web
 {

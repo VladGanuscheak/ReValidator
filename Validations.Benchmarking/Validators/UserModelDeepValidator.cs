@@ -17,7 +17,7 @@ namespace Validations.Benchmarking.Validators
         public OrderItemModelValidator()
         {
             RuleFor(x => x.Quantity).GreaterThan(0);
-            RuleFor(x => x.Product).SetValidator(new ProductModelValidator());
+            RuleFor(x => x.Product).SetValidator(new ProductModelValidator()!);
         }
     }
 
@@ -35,7 +35,7 @@ namespace Validations.Benchmarking.Validators
         public UserModelDeepValidator()
         {
             RuleFor(x => x.Email)
-                .Must(Helpers.Helpers.IsValidEmail)
+                .Must(Helpers.Helpers.IsValidEmail!)
                 .WithMessage("Not valid email");
             RuleFor(x => x.FirstName).NotEmpty();
             RuleFor(x => x.LastName).NotEmpty();

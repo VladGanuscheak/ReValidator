@@ -101,17 +101,17 @@ namespace Validations.Benchmarking
                 Email = "uasea@rtest.com",
                 FirstName = "John",
                 LastName = "Doe",
-                Orders = Enumerable.Range(0, OrderCount)
+                Orders = [.. Enumerable.Range(0, OrderCount)
                     .Select(_ => new OrderModel
                     {
                         OrderNumber = "ORD-001",
-                        Items = Enumerable.Range(0, ItemsPerOrder)
+                        Items = [.. Enumerable.Range(0, ItemsPerOrder)
                             .Select(__ => new OrderItemModel
                             {
                                 Quantity = 1,
                                 Product = new ProductModel { Name = "Product", Price = 10.0m }
-                            }).ToArray()
-                    }).ToArray()
+                            })]
+                    })]
             };
 
             // 🔥 warm-up
