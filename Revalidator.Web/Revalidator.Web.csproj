@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReValidator.Services\ReValidator.csproj" />
+    <ProjectReference Include="..\ReValidator.Validation.MinimalApi\ReValidator.Validation.MinimalApi.csproj" />
   </ItemGroup>
 
 </Project>

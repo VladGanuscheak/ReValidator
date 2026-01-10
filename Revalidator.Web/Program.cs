@@ -1,7 +1,9 @@
 
 using ReValidator;
 using ReValidator.SetUp;
+using ReValidator.Validation.MinimalApi;
 using static Revalidator.Web.Controllers.ValidationController;
+
 
 namespace Revalidator.Web
 {
@@ -44,6 +46,12 @@ namespace Revalidator.Web
                     Expression = "x => !string.IsNullOrWhiteSpace(x.Name)",
                     FullPathToModel = typeof(Person).FullName
                 });
+
+            app.MapPost("/persons", (Person person) => { Console.WriteLine(person.Age); })
+                .AddReValidator<Person>();
+
+            app.MapPost("persons-2/", (Person person) => { Console.WriteLine(person.Age); })
+                .AddEndpointFilter<ReValidatorFilter>();
 
             app.Run();
         }
