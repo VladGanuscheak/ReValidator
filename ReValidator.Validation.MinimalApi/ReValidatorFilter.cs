@@ -32,7 +32,8 @@ public sealed class ReValidatorFilter<T> : IEndpointFilter
 
         if (!result.IsValid)
         {
-            return Results.ValidationProblem(result.Errors.ToDictionary(x => x.PropertyName, x => x.ErrorMessages), statusCode: StatusCodes.Status422UnprocessableEntity);
+            return Results.ValidationProblem(result.Errors.ToDictionary(x => x.PropertyName, x => x.ErrorMessages), 
+                statusCode: StatusCodes.Status422UnprocessableEntity);
         }
 
         return await next(ctx);
@@ -93,7 +94,8 @@ public sealed class ReValidatorFilter : IEndpointFilter
                 continue;
             }
 
-            var result = (ValidationResult)validateMethod.Invoke(validator, new[] { model })!;
+            var result = ValidatorDispatcher.Dispatch(validator, model);
+
             if (!result.IsValid)
             {
                 var errors = result.Errors.ToDictionary(x => x.PropertyName, x => x.ErrorMessages);
