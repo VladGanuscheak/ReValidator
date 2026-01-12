@@ -18,6 +18,9 @@ This package integrates ReValidator into Minimal APIs, allowing request DTOs to 
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>ReValidator.Validation.MinimalApi</PackageId>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Added ValidatorDispatcher for not using Reflection on ReValidatorFilter non generic filter</PackageReleaseNotes>
+    <PackageTags>validation;runtime-validation;dynamic-validation;configuration-driven;revalidator;endpoint-filter</PackageTags>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.1'">

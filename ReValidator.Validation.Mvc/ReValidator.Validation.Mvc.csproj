@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>ReValidator.Validation.Mvc</Title>
+    <Product>ReValidator</Product>
+    <Version>1.0.0</Version>
+    <PackageId>ReValidator.Validation.Mvc</PackageId>
+    <Authors>Ganușceac Vlad</Authors>
+    <Description>ReValidator.Validation.Mvc is a lightweight, generic validation adapter for ASP.NET Core MVC, built on top of the ReValidator engine. It allows you to apply strongly-typed, reusable validators to controller parameters using a simple [Validate] attribute, with full support for dependency injection and dynamic rules.</Description>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>Readme_validation_mvc.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/VladGanuscheak/ReValidator.git</RepositoryUrl>
+    <PackageTags>validation;runtime-validation;dynamic-validation;configuration-driven;revalidator;action-filter</PackageTags>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\Readme_validation_mvc.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReValidator.Contracts\ReValidator.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

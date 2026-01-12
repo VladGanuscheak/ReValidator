@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -21,6 +21,7 @@
     <ProjectReference Include="..\ReValidator.Contracts\ReValidator.Contracts.csproj" />
     <ProjectReference Include="..\ReValidator.Services\ReValidator.csproj" />
     <ProjectReference Include="..\ReValidator.Validation.MinimalApi\ReValidator.Validation.MinimalApi.csproj" />
+    <ProjectReference Include="..\ReValidator.Validation.Mvc\ReValidator.Validation.Mvc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
